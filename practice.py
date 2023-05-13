@@ -5,3 +5,10 @@ def  is_leap_year(year):
     return  year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)
 print(is_leap_year(2016))
 
+
+#Реализуйте функцию string_or_not(), которая проверяет является ли переданный параметр строкой. 
+#Если да, то возвращается строка yes, иначе no.
+def  string_or_not(string):
+    result_1 = isinstance(string, str)
+    return result_1 == True and 'yes' or 'no'
+
