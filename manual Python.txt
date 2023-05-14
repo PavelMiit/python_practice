@@ -273,7 +273,7 @@ print(0 or 1)
                       преобразован в True
 _________________________________________________
 
-NOT                   - операnjh «отрицание»
+NOT                   - оператор «отрицание»
                         мы добавили not слева от вызова функции и получили 
                         обратное действие. 
                             def is_even(number):
@@ -306,23 +306,70 @@ result = 10 % 2 == 0 and 'yes' or 'no' # 'yes'
 True and 'yes' # Результат — истина
 # Проверка на or выполняется, но правая часть не исполняется, так как сразу возвращается 'yes'
 
-
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                             *** IF , ELSE , ELIF ***
 
+IF (ЕСЛИ)          - конструкция языка, которая управляет порядком выполнения 
+                     инструкций. После слова if ей передается выражение-предикат, 
+                     и в конце ставится двоеточие. После этого описывается блок 
+                     кода. Он выполнится, если предикат — истина.
+                     Если предикат — ложь, то блок кода пропускается, и функция 
+                     продолжает свое выполнение дальше. В нашем случае следующая 
+                     строчка кода — return 'normal' — заставит функцию вернуть 
+                     строку и завершиться.
 
+                        def get_type_of_sentence(sentence):
+                            last_char = sentence[-1]
+                            if last_char == '?':
+                                return 'question'
+                            return 'normal'
 
+                        print(get_type_of_sentence('Hodor'))   # => normal
+                        print(get_type_of_sentence('Hodor?'))  # => question
+_________________________________________________
 
+ELSE (ИНАЧЕ)       - добавили else и новый блок. Он выполнится, если условие 
+                     в if — ложь. 
 
+                         def get_type_of_sentence(sentence):
+                             last_char = sentence[-1]
 
+                             if last_char == '?':
+                                 sentence_type = 'question'
+                             else:
+                                 sentence_type = 'normal'
 
+                             return "Sentence is " + sentence_type
 
+                          print(get_type_of_sentence('Hodor'))   
+                          # => 'Sentence is normal'
 
+                          print(get_type_of_sentence('Hodor?'))   
+                          # => 'Sentence is question'
+_________________________________________________
 
+ELIF              -  означает: "если не выполнено предыдущее условие, но выполнено
+                     текущее"
+                         def get_type_of_sentence(sentence):
+                             last_char = sentence[-1]
 
+                             if last_char == '?':
+                                 sentence_type = 'question'
+                             elif last_char == '!':
+                                 sentence_type = 'exclamation'
+                             else:
+                                 sentence_type = 'normal'
 
+                             return 'Sentence is ' + sentence_type
 
+                             print(get_type_of_sentence('Who?'))  
+                             # => 'Sentence is question'
+
+                             print(get_type_of_sentence('No'))    
+                             # => 'Sentence is normal'
+
+                             print(get_type_of_sentence('No!'))   
+                             # => 'Sentence is exclamation'
 
 
 
@@ -419,7 +466,10 @@ Python                - язык со СТРОГОЙ ТИПИЗАЦИЕЙ, т.к
                         булевы значения True или False. Предикаты начинаются с 
                         префикса is или has
 
-
+Тернарный оператор    - единственный оператор в Python, который требует три 
+                        операнда
+                            def abs(number):
+                                return number if number >= 0 else -number
 
 
 
