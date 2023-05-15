@@ -11,4 +11,22 @@ print(is_leap_year(2016))
 def  string_or_not(string):
     result_1 = isinstance(string, str)
     return result_1 == True and 'yes' or 'no'
+    
+    
+#Реализуйте функцию normalize_url(), которая выполняет так называемую нормализацию данных. 
+#Она принимает адрес сайта и возвращает его с https:// в начале.
+#Функция принимает адреса в виде:
+#АДРЕС
+#http://АДРЕС
+#https://АДРЕС (нормализованный)
+#Функция всегда возвращает адрес в виде https://АДРЕС.
+def normalize_url(adress):
+    if adress[:8] == 'https://':
+     return(adress)
+
+    elif adress[:7] == 'http://':
+      return 'https://' + adress[7:]
+      
+    else:
+      return('https://' + adress)
 
